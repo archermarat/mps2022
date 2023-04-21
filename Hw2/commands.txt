@@ -1,0 +1,9 @@
+C:\arm-gnu-toolchain-12.2.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-as -o blink.o blinks.s
+
+C:\arm-gnu-toolchain-12.2.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-ld -Ttext=0x8000000 -o blink.elf blink.o
+
+C:\arm-gnu-toolchain-12.2.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-objcopy -Obinary blink.elf blink.bin
+
+C:\Users\dmast\AppData\Roaming\xPacks\openocd\xpack-openocd-0.11.0-5\bin\openocd.exe -f C:\Users\dmast\AppData\Roaming\xPacks\openocd\xpack-openocd-0.11.0-5\scripts\interface\stlink.cfg -f C:\Users\dmast\AppData\Roaming\xPacks\openocd\xpack-openocd-0.11.0-5\scripts\target\stm32f4x.cfg
+
+program C:\\Users\\dmast\\mps1\\blink.bin 0x8000000
